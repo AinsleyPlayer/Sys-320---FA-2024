@@ -43,6 +43,7 @@ else{
 # Q 10
 
 
+<<<<<<< HEAD
 cd $PSScriptRoot
 $files=(Get-ChildItem)
 
@@ -50,6 +51,15 @@ $folderpath= "$PSScriptRoot/outfolder/"
 $filePath = Join-Path $folderPath "out.csv"
 
 $files | Where-Object {$files[$j].Name -ilike "*.ps1" } | Export-Csv -Path $filePath
+=======
+ cd $PSScriptRoot
+ $files=(Get-ChildItem)
+
+ $folderpath= "$PSScriptRoot/outfolder/"
+ $filePath = Join-Path $folderPath "out.csv"
+
+ $files | Where-Object {$files[$j].Name -ilike "*.ps1" } | Export-Csv -Path $filePath
+>>>>>>> b16ff3158b3d1908b0c150e955a73e08aa1f0e28
 
 # Q 11
 
