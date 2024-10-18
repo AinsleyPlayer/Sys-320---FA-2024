@@ -1,4 +1,4 @@
-﻿<# clear
+﻿ clear
 # Q 1 
 (Get-NetIPAddress -AddressFamily IPv4 | Where-Object { $_.InterfaceAlias -ilike "Ethernet0"}).IPAddress
 
@@ -43,7 +43,7 @@ else{
 # Q 10
 
 
-<<<<<<< HEAD
+
 cd $PSScriptRoot
 $files=(Get-ChildItem)
 
@@ -51,15 +51,6 @@ $folderpath= "$PSScriptRoot/outfolder/"
 $filePath = Join-Path $folderPath "out.csv"
 
 $files | Where-Object {$files[$j].Name -ilike "*.ps1" } | Export-Csv -Path $filePath
-=======
- cd $PSScriptRoot
- $files=(Get-ChildItem)
-
- $folderpath= "$PSScriptRoot/outfolder/"
- $filePath = Join-Path $folderPath "out.csv"
-
- $files | Where-Object {$files[$j].Name -ilike "*.ps1" } | Export-Csv -Path $filePath
->>>>>>> b16ff3158b3d1908b0c150e955a73e08aa1f0e28
 
 # Q 11
 
@@ -67,4 +58,3 @@ cd $PSScriptRoot
 $files= Get-ChildItem -Recurse -File
 $files | Rename-Item -NewName { $_.name -Replace '.csv', '.log' }
 Get-ChildItem -Recurse -File 
-#>
