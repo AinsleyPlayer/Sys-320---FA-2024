@@ -4,7 +4,7 @@
 # Get-EventLog system -source Microsoft-Windows-winlogon
 
 #2
-<# $loginouts = Get-EventLog system -source Microsoft-Windows-Winlogon -After (Get-Date).AddDays(-14)
+$loginouts = Get-EventLog system -source Microsoft-Windows-Winlogon -After (Get-Date).AddDays(-14)
 $loginouts
 $loginoutsTable = @()
 for($i=0; $i -lt $loginouts.count; $i++){
@@ -25,10 +25,10 @@ $loginoutsTable += [pscustomobject]@{"Time" = $loginouts[$i].TimeGenerated;
 }
 
 $loginoutsTable
-#>
+
 
 # Q 3
-<#
+
 $loginouts = Get-EventLog system -source Microsoft-Windows-Winlogon -After (Get-Date).AddDays(-20)
 $loginoutsTable = @()
 for($i=0; $i -lt $loginouts.count; $i++){
@@ -51,7 +51,7 @@ $loginoutsTable += [pscustomobject]@{"Time" = $loginouts[$i].TimeGenerated;
 }
 
 $loginoutsTable
-#>
+
 
 
 
