@@ -35,17 +35,18 @@ function createAUser($name, $password){
      Password = $password
    }
 
-   $newUser = New-LocalUser @params 
+   $newUser = New-LocalUser @params -Disabled
+   Add-LocalGroupMember -Group Users -Member $name
 
 
-   # ***** Policies ******
+   <# ***** Policies ******
 
    # User should be forced to change password
    Set-LocalUser $newUser -PasswordNeverExpires $false
 
    # First time created users should be disabled
    Disable-LocalUser $newUser
-
+   #>
 }
 
 
@@ -73,3 +74,7 @@ function enableAUser($name){
    Enable-LocalUser $userToBeEnabled
    
 }
+
+function checkUser($name){
+        [bool](Get-LocalUser -Name $name -ErrorAction SilentlyContinue)
+    }

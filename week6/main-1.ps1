@@ -47,7 +47,7 @@ while($operation){
     elseif($choice -eq 3){ 
 
         $name = Read-Host -Prompt "Please enter the username for the new user"
-        $password = Read-Host -AsSecureString -Prompt "Please enter the password for the new user"
+        
 
         # TODO: Create a function called checkUser in Users that: 
         #              - Checks if user a exists. 
@@ -70,7 +70,7 @@ while($operation){
         # TODO: Check the given password with your new function. 
         #              - If false is returned, do not continue and inform the user
         #              - If true is returned, continue with the rest of the function
-
+        $password = Read-Host -AsSecureString -Prompt "Please enter the password for the new user"
         else{
                 if (checkPassword $password){
                     Write-Host "Password is secure"
